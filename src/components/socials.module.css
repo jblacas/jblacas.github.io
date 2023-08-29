@@ -1,0 +1,36 @@
+.mediaList {
+    list-style: none;
+    position: fixed;
+    left: 30px;
+    right: auto;
+    bottom: 0px
+}
+
+.mediaList li {
+    padding: 10px;
+}
+
+
+.mediaList li a {
+    display: inline-block;
+    position: relative;
+    transition: var(--transition);
+}
+
+.mediaList li a:hover, .mediaList li a:focus {
+    transform: translateY(-3px);
+    color: theme('colors.cyan.500');
+}
+
+.mediaList li:last-of-type {
+    margin-bottom: 20px;
+}
+
+.mediaList::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 90px;
+    margin: 0px auto;
+    background-color: white;
+}

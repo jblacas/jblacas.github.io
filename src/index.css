@@ -1,0 +1,95 @@
+@import url('./satoshi.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    font-family: 'Satoshi-Medium';
+    line-height: 1.5;
+    font-weight: 400;
+
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+
+    --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+    --green: #64ffda;
+}
+
+a {
+  font-weight: 500;
+  cursor: none;
+}
+
+html {
+    overflow-y: scroll;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  padding: 0;
+  cursor: none;
+}
+
+
+.link {
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.flexLink {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    align-items: center;
+}
+
+.condensed {
+    padding: 0; 
+}
+
+
+.link::after,
+.flexLink::after
+ {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.1em;
+    background-color: theme('colors.cyan.500');
+    opacity: 0;
+    transition: opacity 100ms, transform 300ms;
+    transform: translate3d(-100%, 0, 0);
+}
+
+.link.active::after {
+    background-color: white;
+}
+
+.link:hover::after,
+.link:focus::after,
+.link.active::after,
+.flexLink:hover::after,
+.flexLink:focus::after
+ {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.break {
+    flex-basis: 100%;
+    height: 0;
+}
